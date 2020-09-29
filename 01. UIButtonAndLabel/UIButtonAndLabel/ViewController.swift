@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     @IBAction func pressedButton(_ sender: UIButton) {
         
         label.isHidden = false
+        
         button.isHidden = false
         
         if sender.tag == 0 {
