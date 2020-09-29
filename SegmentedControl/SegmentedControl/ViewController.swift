@@ -12,17 +12,25 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-
+    @IBOutlet weak var slider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let sliderValue: Float = 0.5
         
-        label.isHidden = true
+        label.text = String(sliderValue)
         label.font = label.font.withSize(35)
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.text = ""
         
         segmentedControl.insertSegment(withTitle: "Third", at: 2, animated: true)
+        
+        slider.minimumValue = 0
+        slider.maximumValue = 1
+        slider.value = sliderValue;
+        slider.minimumTrackTintColor = .yellow
+        slider.maximumTrackTintColor = .red
+        slider.thumbTintColor = .blue
     }
 
     
@@ -43,5 +51,10 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func sliderAction(_ sender: UISlider) {
+        label.text = String(sender.value)
+        let backgroundColor = self.view.backgroundColor
+        self.view.backgroundColor = backgroundColor?.withAlphaComponent(CGFloat(sender.value))
+    }
 }
 
