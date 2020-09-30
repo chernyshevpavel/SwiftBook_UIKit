@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,8 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .red
         slider.thumbTintColor = .blue
+        
+        datePicker.locale = Locale(identifier: "ru_RU")
     }
 
     
@@ -55,6 +58,14 @@ class ViewController: UIViewController {
         label.text = String(sender.value)
         let backgroundColor = self.view.backgroundColor
         self.view.backgroundColor = backgroundColor?.withAlphaComponent(CGFloat(sender.value))
+    }
+    
+    @IBAction func cangeDate(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        let dateValue = dateFormatter.string(from: sender.date)
+        label.text = dateValue
     }
 }
 
