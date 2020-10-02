@@ -53,21 +53,40 @@
                                             <action selector="cangeDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="81e-JI-CBC"/>
                                         </connections>
                                     </datePicker>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOf-dP-IWu">
+                                        <rect key="frame" x="85" y="342" width="244" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldTapped:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="SRr-tu-E0x"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8h-iJ-ARo">
+                                        <rect key="frame" x="185.5" y="469" width="42" height="30"/>
+                                        <state key="normal" title="DONE"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="J8h-iJ-ARo" firstAttribute="centerX" secondItem="WOk-NN-PKA" secondAttribute="centerX" id="47j-RK-VDU"/>
+                                    <constraint firstItem="SOf-dP-IWu" firstAttribute="centerX" secondItem="NXr-c1-lPz" secondAttribute="centerX" id="54h-Yx-eoI"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WOk-NN-PKA" secondAttribute="trailing" constant="20" symbolic="YES" id="7lh-FJ-Wg0"/>
                                     <constraint firstAttribute="trailing" secondItem="D5x-2s-kvD" secondAttribute="trailing" constant="34" id="7vb-pL-3hn"/>
                                     <constraint firstItem="WOk-NN-PKA" firstAttribute="top" secondItem="TMm-N8-K20" secondAttribute="top" constant="44" id="Ez2-6k-wrv"/>
                                     <constraint firstAttribute="trailing" secondItem="sxC-dU-7cK" secondAttribute="trailing" id="FSl-4q-CBh"/>
                                     <constraint firstItem="WOk-NN-PKA" firstAttribute="leading" secondItem="TMm-N8-K20" secondAttribute="leading" constant="141" id="HQS-yb-70a"/>
+                                    <constraint firstItem="J8h-iJ-ARo" firstAttribute="top" secondItem="SOf-dP-IWu" secondAttribute="bottom" constant="93" id="Otn-Cv-DSW"/>
                                     <constraint firstAttribute="bottom" secondItem="sxC-dU-7cK" secondAttribute="bottom" constant="101" id="P7w-Ql-shs"/>
                                     <constraint firstItem="D5x-2s-kvD" firstAttribute="leading" secondItem="1R3-Tr-mWk" secondAttribute="leading" constant="20" id="RCa-qA-dqy"/>
+                                    <constraint firstItem="J8h-iJ-ARo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1R3-Tr-mWk" secondAttribute="leading" id="VoU-gv-WB0"/>
                                     <constraint firstItem="NXr-c1-lPz" firstAttribute="top" secondItem="D5x-2s-kvD" secondAttribute="bottom" constant="73" id="bwV-1e-13Y"/>
                                     <constraint firstItem="sxC-dU-7cK" firstAttribute="leading" secondItem="TMm-N8-K20" secondAttribute="leading" id="dVx-Ab-WaV"/>
                                     <constraint firstItem="sxC-dU-7cK" firstAttribute="top" secondItem="NXr-c1-lPz" secondAttribute="bottom" constant="332" id="gsR-jo-yEQ"/>
                                     <constraint firstItem="D5x-2s-kvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TMm-N8-K20" secondAttribute="leading" constant="20" symbolic="YES" id="iVx-Ee-1Jb"/>
                                     <constraint firstItem="D5x-2s-kvD" firstAttribute="top" secondItem="WOk-NN-PKA" secondAttribute="bottom" constant="52" id="m9q-w3-mpK"/>
+                                    <constraint firstItem="sxC-dU-7cK" firstAttribute="top" secondItem="J8h-iJ-ARo" secondAttribute="bottom" constant="84" id="oGK-gt-n2v"/>
+                                    <constraint firstItem="1R3-Tr-mWk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J8h-iJ-ARo" secondAttribute="trailing" id="t63-yM-Xct"/>
                                     <constraint firstItem="NXr-c1-lPz" firstAttribute="centerX" secondItem="TMm-N8-K20" secondAttribute="centerX" id="vOI-v5-STa"/>
+                                    <constraint firstItem="SOf-dP-IWu" firstAttribute="leading" secondItem="1R3-Tr-mWk" secondAttribute="leading" constant="85" id="zDN-lz-cjS"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="itf-bb-Xgv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="1R3-Tr-mWk"/>
@@ -85,9 +104,11 @@
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="datePicker" destination="sxC-dU-7cK" id="YRp-bT-RzF"/>
+                        <outlet property="doneButton" destination="J8h-iJ-ARo" id="Bw8-Yi-A0s"/>
                         <outlet property="label" destination="D5x-2s-kvD" id="RBM-S5-roz"/>
                         <outlet property="segmentedControl" destination="WOk-NN-PKA" id="JJM-2o-E3b"/>
                         <outlet property="slider" destination="NXr-c1-lPz" id="JeU-CI-zjY"/>
+                        <outlet property="textField" destination="SOf-dP-IWu" id="tzs-tL-4Yh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
