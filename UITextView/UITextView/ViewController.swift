@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stepper: UIStepper!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +25,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        stepper.value = 17
+        stepper.minimumValue = 10
+        stepper.maximumValue = 25
+        stepper.layer.cornerRadius = 5
+        stepper.tintColor = .white
+        stepper.backgroundColor = .gray
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,6 +56,11 @@ class ViewController: UIViewController {
         }
         
         textView.scrollRangeToVisible(textView.selectedRange)
+    }
+    @IBAction func sizeFont(_ sender: UIStepper) {
+        guard let font = textView.font?.fontName else { return }
+        let fontSize = CGFloat(sender.value)
+        textView.font = UIFont(name: font, size: fontSize)
     }
     
 }

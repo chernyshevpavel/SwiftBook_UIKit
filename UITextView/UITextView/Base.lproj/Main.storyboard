@@ -32,11 +32,19 @@ The appearance of the keyboard itself can be customized using the properties pro
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="A67-sg-UK6">
+                                <rect key="frame" x="300" y="81" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="379-Rh-l0j"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="x2G-F3-QSe" secondAttribute="bottom" constant="115" id="Hc5-Oj-dM2"/>
+                            <constraint firstItem="A67-sg-UK6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="37" id="KdO-my-ATl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x2G-F3-QSe" secondAttribute="trailing" constant="16" id="M8i-Cp-g3d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A67-sg-UK6" secondAttribute="trailing" constant="20" id="OhC-zD-JOE"/>
                             <constraint firstItem="g6t-Qo-ONW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="UZL-hH-KHf"/>
                             <constraint firstItem="x2G-F3-QSe" firstAttribute="top" secondItem="g6t-Qo-ONW" secondAttribute="bottom" constant="65" id="XoY-tA-KQT"/>
                             <constraint firstItem="x2G-F3-QSe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="biw-xs-7MU"/>
@@ -47,6 +55,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="g6t-Qo-ONW" id="Dfy-Vr-Fnz"/>
+                        <outlet property="stepper" destination="A67-sg-UK6" id="KxO-eH-sdP"/>
                         <outlet property="textView" destination="x2G-F3-QSe" id="AHd-0I-jTY"/>
                         <outlet property="textViewBottomConstraint" destination="Hc5-Oj-dM2" id="9BZ-JG-Idc"/>
                     </connections>
