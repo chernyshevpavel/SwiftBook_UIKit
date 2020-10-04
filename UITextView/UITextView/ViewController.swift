@@ -18,10 +18,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
-        textView.text = ""
+        //textView.text = ""
         textView.backgroundColor = self.view.backgroundColor
         textView.layer.cornerRadius = 10
         textView.delegate = self
+        countLabel.text = "\(textView.text.count)"
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -78,6 +79,6 @@ extension ViewController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         countLabel.text = "\(textView.text.count)"
-        return textView.text.count + (text.count - range.length) <= 60
+        return textView.text.count + (text.count - range.length) <= 1650
     }
 }
